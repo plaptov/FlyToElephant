@@ -18,11 +18,11 @@ namespace UnitTestProject
 			Assert.IsNotNull(graph);
 			Assert.AreNotEqual(graph.Count, 0);
 			Assert.IsTrue(graph.All(kv => kv.Key.Text.Length == wordLen));
-			Assert.IsTrue(graph.Any(kv => kv.Value != null && kv.Value.Length > 0));
+			Assert.IsTrue(graph.Any(kv => kv.Value != null && kv.Value.Count > 0));
 			Assert.IsTrue(graph.All(kv =>
 				kv.Value != null &&
-				(kv.Value.Length > 0 ||
-				 Array.TrueForAll(kv.Value, w =>
+				(kv.Value.Count > 0 ||
+				 kv.Value.TrueForAll(w =>
 					kv.Key.DistanceTo(w) == 1))));
 		}
 	}
