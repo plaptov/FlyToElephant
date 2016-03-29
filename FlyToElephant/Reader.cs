@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FlyToElephant
 {
 	/// <summary>
-	/// Интерфейс читателя файлов. Выделен для возможности создания mock-объекта
+	/// Интерфейс читателя файлов. Выделен для возможности создания объекта-заглушки
 	/// </summary>
 	public interface IReader
 	{

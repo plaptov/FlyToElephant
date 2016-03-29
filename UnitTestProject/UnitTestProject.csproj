@@ -56,10 +56,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MockReader.cs" />
+    <Compile Include="StubReader.cs" />
     <Compile Include="PathFinderTests.cs" />
     <Compile Include="PathTests.cs" />
-    <Compile Include="ReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordsGraphTests.cs" />
     <Compile Include="WordTests.cs" />

@@ -7,8 +7,15 @@ using FlyToElephant;
 
 namespace UnitTestProject
 {
-	class MockReader : IReader
+	/// <summary>
+	/// Заглушка-реализация читателя для тестов.
+	/// Реализован для слов из 4-ч букв.
+	/// </summary>
+	class StubReader : IReader
 	{
+		/// <summary>
+		/// Считать словарь (путь не учитывается)
+		/// </summary>
 		public string[] ReadDictionary(string path)
 		{
 			return new[]
@@ -37,7 +44,11 @@ namespace UnitTestProject
 				"ХЛЕБ"
 			};
 		}
-
+		/// <summary>
+		/// Считать начальное и конечное слова (путь не учитывается)
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		public string[] ReadStartAndFinish(string path)
 		{
 			return new[] { "МУХА", "СЛОН" };

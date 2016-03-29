@@ -4,15 +4,26 @@ using FlyToElephant;
 
 namespace UnitTestProject
 {
+	/// <summary>
+	/// Тесты для класса поиска пути по графу
+	/// </summary>
 	[TestClass]
 	public class PathFinderTests
 	{
+		/// <summary>
+		/// Тест поиска пути
+		/// </summary>
 		[TestMethod]
 		public void TestPathFind()
 		{
-			IReader reader = new MockReader();
+			// Создаём ридер-заглушку
+			IReader reader = new StubReader();
+			// Генерируем граф
 			var graph = WordsGraph.Generate(reader.ReadDictionary(null), 4);
-			var path = PathFinder.FindShortestPath(graph, new Word("МУХА"), new Word("СЛОН"));
+			var sf = reader.ReadStartAndFinish(null);
+			// Ищем решение в графе
+			var path = PathFinder.FindShortestPath(graph, new Word(sf[0]), new Word(sf[1]));
+			// Решение должно быть найдено
 			Assert.IsNotNull(path);
 		}
 	}
